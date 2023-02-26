@@ -1,8 +1,8 @@
 const allLiClassItem = document.querySelectorAll('.item');
 
-function amountLiItem(event) {
+function amountLiItem(elements) {
     console.log(`Number of categories: ${allLiClassItem.length}`);
-    event.forEach(element => {
+    elements.forEach(element => {
         console.log(`Category: ${element.querySelector('h2').textContent}`);
         console.log(`Elements: ${element.querySelectorAll('li').length}`);
     })
