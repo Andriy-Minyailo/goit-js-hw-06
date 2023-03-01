@@ -1,5 +1,33 @@
+const inputNumber = document.querySelector('[type="number"]');
+const buttonCreate = document.querySelector('[data-create]');
+const buttonDestroy = document.querySelector('[data-destroy]');
+const divBoxes = document.querySelector('#boxes');
+
+buttonCreate.addEventListener('click', () => {
+  const numberBoxs = inputNumber.value;
+  createBoxes(numberBoxs);
+});
+
+buttonDestroy.addEventListener('click', destroyBoxes);
+
+function createBoxes (amount) {
+   let sizeDivBox = 30;
+  const divBoxElem = [];
+  for (let i = 0; i < amount; i += 1) {
+    let divColor = getRandomHexColor();
+    divBoxElem.push(`<div style ="background-color:${divColor}; width:${sizeDivBox}px; height:${sizeDivBox}px;"></div>`);
+    sizeDivBox += 10;
+  }
+  divBoxes.insertAdjacentHTML("afterbegin", divBoxElem.join(""));
+}
+
+function destroyBoxes () {
+  divBoxes.innerHTML = "";
+}
+
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215)
     .toString(16)
     .padStart(6, 0)}`;
 }
+
