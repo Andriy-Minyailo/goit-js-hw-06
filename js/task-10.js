@@ -18,7 +18,7 @@ function createBoxes (amount) {
     divBoxElem.push(`<div style ="background-color:${divColor}; width:${sizeDivBox}px; height:${sizeDivBox}px;"></div>`);
     sizeDivBox += 10;
   }
-  divBoxes.insertAdjacentHTML("afterbegin", divBoxElem.join(""));
+  divBoxes.insertAdjacentHTML("beforeend", divBoxElem.join(""));
 }
 
 function destroyBoxes () {
