@@ -4,9 +4,14 @@ const buttonDestroy = document.querySelector('[data-destroy]');
 const divBoxes = document.querySelector('#boxes');
 
 buttonCreate.addEventListener('click', () => {
-  const numberBoxs = inputNumber.value;
+  let numberBoxs = Number(inputNumber.value);
+  if (numberBoxs > inputNumber.getAttribute("max")) {
+    numberBoxs = inputNumber.getAttribute("max");
+    inputNumber.value = inputNumber.getAttribute("max");
+  }
   createBoxes(numberBoxs);
-});
+}
+);
 
 buttonDestroy.addEventListener('click', destroyBoxes);
 
