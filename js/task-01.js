@@ -1,11 +1,13 @@
-const allLiClassItem = document.querySelectorAll('.item');
+const UlIdCategories = document.getElementById('categories');
+
 
 function amountLiItem(elements) {
-    console.log(`Number of categories: ${allLiClassItem.length}`);
-    elements.forEach(element => {
-        console.log(`Category: ${element.querySelector('h2').textContent}`);
-        console.log(`Elements: ${element.querySelectorAll('li').length}`);
+    const allElelment = [...elements.children];
+    console.log(`Number of categories: ${allElelment.length}`);
+    allElelment.forEach(element => {
+        console.log(`Category: ${element.firstElementChild.textContent}`);
+        console.log(`Elements: ${element.lastElementChild.children.length}`);
     })
 }
 
-amountLiItem(allLiClassItem);
+amountLiItem(UlIdCategories);
