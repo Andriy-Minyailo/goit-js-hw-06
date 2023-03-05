@@ -13,8 +13,8 @@ function onFormSubmit(event) {
             password: password.value,
         };
         console.log(formData);
+        event.currentTarget.reset();
     }
-event.currentTarget.reset();
 }
 
 
